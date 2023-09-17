@@ -12,6 +12,7 @@ export const authOptions = {
 			clientSecret: process.env.NEXTAUTH_URL_GOOGLE_CLIENT_SECRET as string,
 		}),
 	],
+	secret: process.env.NEXTAUTH_SECRET,
 };
 
 export const getAuthSession = () => getServerSession(authOptions);
