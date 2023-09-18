@@ -76,6 +76,7 @@ model Post {
     userEmail String
     user      User      @relation(fields: [userEmail], references: [email])
     comments  Comment[]
+    public    Boolean   @default(false)
 }
 
 model Comment {

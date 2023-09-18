@@ -1,6 +1,6 @@
 "use client";
 import axios from "axios";
-import { useSession } from "next-auth/react";
+import { useSession} from "next-auth/react";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useRef, useState } from "react";
 import { Editor } from "@tinymce/tinymce-react";
@@ -18,6 +18,7 @@ function Writing() {
 	// const log = () => {
 	// };
 	const { data, status } = useSession();
+
 	const router = useRouter();
 	const [file, setFile] = useState<File>();
 	const [select, setSelect] = useState("news");
