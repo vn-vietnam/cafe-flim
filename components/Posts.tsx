@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const getData = async () => {
 	const res = await fetch(
-		`https://cafe-flim-git-new-vn-vietnam.vercel.app/api/post?page=1`,
+		`https://cafe-flim.vercel.app/api/post?page=1`,
 		{
 			cache: "no-store",
 		}

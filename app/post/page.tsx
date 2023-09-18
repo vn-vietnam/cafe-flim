@@ -4,7 +4,7 @@ import Link from "next/link";
 import React from "react";
 
 const getData = async () => {
-	const res = await fetch(`https://cafe-flim-git-new-vn-vietnam.vercel.app/api/post`, {
+	const res = await fetch(`https://cafe-flim.vercel.app/api/post`, {
 		cache: "no-store",
 	});
 
