@@ -15,8 +15,9 @@ const getData = async () => {
 	return res.json();
 };
 
-const Post = async () => {
+export default async function Post() {
 	const posts: PostType = await getData();
+	console.log(posts);
 
 	return (
 		<div className="w-[100%] min-h-[100vh] bg-yellow-200 p-8">
@@ -35,6 +36,4 @@ const Post = async () => {
 			</div>
 		</div>
 	);
-};
-
-export default Post;
+}
