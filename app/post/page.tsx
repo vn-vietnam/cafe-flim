@@ -4,7 +4,7 @@ import Link from "next/link";
 import React from "react";
 
 const getData = async () => {
-	const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/post`, {
+	const res = await fetch(`https://cafe-flim-git-new-vn-vietnam.vercel.app/api/post`, {
 		cache: "no-store",
 	});
 
@@ -39,10 +39,7 @@ export default async function Post() {
 							id={e?.id}
 						>
 							<Image
-								src={
-									e?.img ||
-									"https://images.unsplash.com/photo-1694159784642-490d23f645a8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzMnx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
-								}
+								src={e?.img as string}
 								alt="img"
 								width={500}
 								height={500}

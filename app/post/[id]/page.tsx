@@ -25,7 +25,7 @@ function SinglePost() {
 	}>();
 	const [loading, setLoading] = useState(true);
 	useEffect(() => {
-		fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/post/${params.id}`, {
+		fetch(`https://cafe-flim-git-new-vn-vietnam.vercel.app/api/post/${params.id}`, {
 			cache: "no-store",
 		})
 			.then((res) => res.json())
