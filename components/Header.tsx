@@ -8,18 +8,21 @@ function Header() {
 	return (
 		<>
 			<div className="flex justify-between items-center p-8 w-[100%] h-[3vh] bg-white border-b-black border-[1px]">
-				<Image
-					src="/Cafe.png"
-					alt="logo"
-					className="rounded-full"
-					width={50}
-					height={50}
-				/>
+				<Link href={'/'}>
+					<Image
+						priority
+						src="/Cafe.png"
+						alt="logo"
+						className="rounded-full"
+						width={50}
+						height={50}
+					/>
+				</Link>
 				<div className="flex flex-row gap-3 justify-between items-center">
-					<Link href={"/login"}>Rooms</Link>
-					<Link href={"/login"}>Movies</Link>
-					<Link href={"/login"}>Foods</Link>
-					<Link href={"/login"}>Blogs</Link>
+					<Link href={"/room"}>Rooms</Link>
+					<Link href={"/movies"}>Movies</Link>
+					<Link href={"/food"}>Foods</Link>
+					<Link href={"/post"}>Blogs</Link>
 					{status === "authenticated" ? (
 						<div className="flex flex-row gap-3 justify-between items-center">
 							<Link href={"/profile"}>
@@ -31,6 +34,7 @@ function Header() {
 									height={50}
 								/>
 							</Link>
+							<Link href={"/writing"}>Writing</Link>
 							{/* <div>{data?.user?.email}</div> */}
 							<Link href={"/"} onClick={() => signOut()}>
 								Logout

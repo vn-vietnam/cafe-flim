@@ -1,17 +1,16 @@
 import Image from "next/image";
 import React from "react";
 
-
 function Footer() {
 	return (
 		<div className="w-[100%] h-[13vh] p-8 bg-white border-y-black border-[1px] flex justify-between items-center">
-			<div>
+			<div className="flex justify-center items-center gap-3">
 				<Image
 					src="/Cafe.png"
 					alt="logo"
 					className="rounded-full"
-					width={80}
-					height={80}
+					width={40}
+					height={40}
 				/>
 				<div className="text-sm text-center mt-2 ">Cafe Film</div>
 			</div>
