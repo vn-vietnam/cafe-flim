@@ -1,9 +1,8 @@
 "use client";
-import ListPosts from "@/components/ListPosts";
-import { PostType } from "@/types/type";
+
 import Image from "next/image";
 import Link from "next/link";
-import { useParams, useSearchParams } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
 const Category = () => {
@@ -55,19 +54,7 @@ const Category = () => {
 					})}
 				</div>
 			)}
-			{/* <div className="flex flex-row justify-start gap-5">
-				<Link href={"/post?cat=news"}>News</Link>
-				<Link href={"/post?cat=newspaper"}>Newspaper</Link>
-				<Link href={"/post?cat=blog"}>Blog</Link>
-				<Link href={"/post?cat=story"}>Story</Link>
-				<Link href={"/post?cat=hot-news"}>Hot news</Link>
-			</div>
-			<div className="flex justify-between items-center">
-				<h1 className="my-5 text-[32px]">New Articles</h1>
-			</div>
-			<div className="flex justify-between flex-wrap gap-5">
-				<ListPosts data={posts} />
-			</div> */}
+			
 		</div>
 	);
 };
