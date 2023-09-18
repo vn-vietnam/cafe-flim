@@ -97,7 +97,7 @@ function Writing() {
 			console.log(error);
 		}
 	};
-	// console.log(inputs, file, select);
+
 	return (
 		<form
 			onSubmit={handleSubmit}
@@ -112,14 +112,7 @@ function Writing() {
 				onChange={handleChange}
 				placeholder="Title"
 			/>
-			<span>Description:</span>
-			<textarea
-				placeholder="Description"
-				name="desc"
-				onChange={handleChange}
-				className="w-[100%] p-5 h-[200px] border-black border-[1x]
-				bg-slate-100"
-			/>
+
 			<span>Slug:</span>
 			<input
 				placeholder="Slug"
@@ -144,12 +137,7 @@ function Writing() {
 			</select>
 
 			<input type="file" name="img" onChange={handleChangeImg} />
-			<button
-				type="submit"
-				className="border-black  h-[50px] bg-slate-100 w-[100px] border-2"
-			>
-				Submit
-			</button>
+
 			<Editor
 				apiKey={process.env.NEXT_PUBLIC_TINY_EDITER}
 				onInit={(evt, editor) => (editorRef.current = editor)}
@@ -186,14 +174,12 @@ function Writing() {
 						"body { font-family:Helvetica,Arial,sans-serif; font-size:14px }",
 				}}
 			/>
-			{/* <button
-				type="button"
-				onClick={() => {
-					console.log(editorRef.current?.getContent());
-				}}
+			<button
+				type="submit"
+				className="border-black  h-[50px] bg-slate-100 w-[100px] border-2"
 			>
-				hello
-			</button> */}
+				Submit
+			</button>
 		</form>
 	);
 }
