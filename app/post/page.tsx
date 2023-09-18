@@ -47,7 +47,6 @@ export default async function Post() {
 									alt="img"
 									width={500}
 									height={500}
-									className="w-auto h-auto"
 								/>
 								<div className="text-[16px] font-semibold">{e?.title}</div>
 								<div className="text-[16px]">Views: {e?.views}</div>
