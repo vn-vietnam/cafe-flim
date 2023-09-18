@@ -32,7 +32,7 @@ const Category = () => {
 				<div className="flex gap-5">
 					{data.map((e: any) => {
 						return (
-							<>
+							<div key={e?.id}>
 								<Link
 									href={"/post/" + e?.id}
 									className="flex flex-col justify-center items-start"
@@ -50,7 +50,7 @@ const Category = () => {
 									<div className="text-[16px] font-semibold">{e?.title}</div>
 									<div className="text-[16px]">Views: {e?.views}</div>
 								</Link>
-							</>
+							</div>
 						);
 					})}
 				</div>
