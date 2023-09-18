@@ -39,7 +39,10 @@ export default async function Post() {
 							id={e?.id}
 						>
 							<Image
-								src={e?.img as string}
+								src={
+									e?.img ||
+									"https://images.unsplash.com/photo-1694159784642-490d23f645a8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzMnx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+								}
 								alt="img"
 								width={500}
 								height={500}
