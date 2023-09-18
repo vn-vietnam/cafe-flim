@@ -5,9 +5,26 @@ import { NextRequest, NextResponse } from "next/server";
 export const GET = async (req: NextRequest) => {
 	const { searchParams } = new URL(req.url);
 	const cat: any = searchParams.get("cat");
+	const page: any = searchParams.get("page");
+	const POST_PER_PAGE = 3;
 
+	const query = {
+		take: POST_PER_PAGE,
+		skip: POST_PER_PAGE * (page - 1),
+		where: {
+			...(cat && { catSlug: cat }),
+			public: true,
+		},
+	};
 	try {
-		if (searchParams.get("cat")) {
+		if (searchParams.size === 0) {
+			const posts = await prisma.post.findMany({
+				where: {
+					public: true,
+				},
+			});
+			return new NextResponse(JSON.stringify(posts), { status: 200 });
+		} else if (searchParams.get("cat")) {
 			const posts = await prisma.post.findMany({
 				where: {
 					catSlug: cat,
@@ -16,11 +33,10 @@ export const GET = async (req: NextRequest) => {
 			});
 			return new NextResponse(JSON.stringify(posts), { status: 200 });
 		} else {
-			const posts = await prisma.post.findMany({
-				where: {
-					public: true,
-				},
-			});
+			const [posts] = await prisma.$transaction([
+				prisma.post.findMany(query),
+				prisma.post.count({ where: query.where }),
+			]);
 			return new NextResponse(JSON.stringify(posts), { status: 200 });
 		}
 	} catch (err) {
