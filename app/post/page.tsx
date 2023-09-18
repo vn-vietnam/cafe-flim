@@ -2,17 +2,18 @@ import { PostType } from "@/types/type";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-
+import axios from "axios";
 const getData = async () => {
-	const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/post`, {
-		cache: "no-store",
-	});
+	let url = `${process.env.NEXT_PUBLIC_BASE_URL}/api/post`;
+	const res = await axios.get(url);
+	// const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/post`, {
+	// 	cache: "no-store",
+	// });
+	// if (!res.ok) {
+	// 	console.log("error");
+	// }
 
-	if (!res.ok) {
-		console.log("error");
-	}
-
-	return res.json();
+	return res.data;
 };
 
 export default async function Post() {
