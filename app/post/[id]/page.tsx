@@ -37,7 +37,7 @@ function SinglePost() {
 	return (
 		<>
 			{loading ? (
-				<>loading...</>
+				<div className="w-[100%] h-[70vh]">loading</div>
 			) : (
 				<>
 					<div className="flex m-8 flex-col">
@@ -49,7 +49,6 @@ function SinglePost() {
 								}
 								alt=""
 								fill
-								priority
 								className="object-cover"
 							/>
 						</div>
