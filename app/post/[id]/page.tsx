@@ -25,7 +25,7 @@ function SinglePost() {
 	}>();
 	const [loading, setLoading] = useState(true);
 	useEffect(() => {
-		fetch(`${process.env.VERCEL_URL}api/post/${params.id}`, {
+		fetch(`${process.env.NEXT_PUBLIC_URL}api/post/${params.id}`, {
 			cache: "no-store",
 		})
 			.then((res) => res.json())

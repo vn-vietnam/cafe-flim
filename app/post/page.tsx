@@ -4,7 +4,7 @@ import Link from "next/link";
 import React from "react";
 
 const getData = async () => {
-	const res = await fetch(`${process.env.VERCEL_URL}api/post`, {
+	const res = await fetch(`${process.env.NEXT_PUBLIC_URL}api/post`, {
 		cache: "no-store",
 	});
 

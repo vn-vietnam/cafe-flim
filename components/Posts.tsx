@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const getData = async () => {
 	const res = await fetch(
-		`${process.env.VERCEL_URL}api/post?page=1`,
+		`${process.env.NEXT_PUBLIC_URL}api/post?page=1`,
 		{
 			cache: "no-store",
 		}

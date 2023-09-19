@@ -76,7 +76,7 @@ function Writing() {
 			const res = await response.json();
 			console.log(res.url);
 			axios
-				.post(`${process.env.VERCEL_URL}api/post`, {
+				.post(`${process.env.NEXT_PUBLIC_URL}api/post`, {
 					...inputs,
 					img: res.url,
 					catSlug: select,

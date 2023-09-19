@@ -11,7 +11,7 @@ const Category = () => {
 	const [data, setData] = useState<any[]>([]);
 	const [loading, setLoading] = useState(true);
 	useEffect(() => {
-		fetch(`https://cafe-flim.vercel.app/api/post?cat=${category}`, {
+		fetch(`${process.env.NEXT_PUBLIC_URL}api/post?cat=${category}`, {
 			cache: "no-store",
 		})
 			.then((res) => res.json())
