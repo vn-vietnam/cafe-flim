@@ -17,15 +17,16 @@ const getData = async () => {
 
 export default async function Post() {
 	const posts: PostType = await getData();
+	// console.log(posts);
 
 	return (
 		<div className="w-[100%] min-h-[100vh] bg-yellow-200 p-8">
 			<div className="flex flex-row justify-start gap-5">
-				<Link href={"category?cat=news"}>News</Link>
-				<Link href={"category?cat=newspaper"}>Newspaper</Link>
-				<Link href={"category?cat=blog"}>Blog</Link>
-				<Link href={"category?cat=story"}>Story</Link>
-				<Link href={"category?cat=hot-news"}>Hot news</Link>
+				<Link href={"/category?cat=news"}>News</Link>
+				<Link href={"/category?cat=newspaper"}>Newspaper</Link>
+				<Link href={"/category?cat=blog"}>Blog</Link>
+				<Link href={"/category?cat=story"}>Story</Link>
+				<Link href={"/category?cat=hot-news"}>Hot news</Link>
 			</div>
 			<div className="flex justify-between items-center">
 				<h1 className="my-5 text-[32px]">New Articles</h1>
@@ -34,7 +35,7 @@ export default async function Post() {
 				{posts?.map((e) => (
 					<>
 						<Link
-							href={"post/" + e?.id}
+							href={"/post/" + e?.id}
 							className="flex flex-col justify-center items-start"
 							id={e?.id}
 						>
