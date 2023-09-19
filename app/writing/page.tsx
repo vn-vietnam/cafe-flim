@@ -76,7 +76,7 @@ function Writing() {
 			const res = await response.json();
 			console.log(res.url);
 			axios
-				.post(`https://cafe-flim-git-new-vn-vietnam.vercel.app/api/post`, {
+				.post(`${process.env.VERCEL_URL}api/post`, {
 					...inputs,
 					img: res.url,
 					catSlug: select,
