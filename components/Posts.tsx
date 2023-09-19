@@ -24,13 +24,13 @@ const Posts = async () => {
 		<div className="w-[100%] min-h-[100vh] bg-yellow-200 p-8">
 			<div className="flex justify-between items-center">
 				<h1 className="my-5 text-[32px]">New Articles</h1>
-				<Link href={"/post"}>See all</Link>
+				<Link href={"post"}>See all</Link>
 			</div>
 			<div className="flex justify-between flex-wrap gap-5">
 				{posts?.map((e) => (
 					<>
 						<Link
-							href={"/post/" + e?.id}
+							href={"post/" + e?.id}
 							className="flex flex-col justify-center items-start"
 							id={e?.id}
 						>

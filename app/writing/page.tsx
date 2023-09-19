@@ -85,7 +85,7 @@ function Writing() {
 				.then(function (response) {
 					// handle success
 					console.log(response);
-					router.push("/");
+					router.push("");
 				})
 				.catch(function (error) {
 					// handle error

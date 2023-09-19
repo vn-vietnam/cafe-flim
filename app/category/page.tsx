@@ -33,7 +33,7 @@ const Category = () => {
 						return (
 							<div key={e?.id}>
 								<Link
-									href={"/post/" + e?.id}
+									href={"post/" + e?.id}
 									className="flex flex-col justify-center items-start"
 									id={e?.id}
 								>

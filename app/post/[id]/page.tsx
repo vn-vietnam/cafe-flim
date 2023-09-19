@@ -64,7 +64,7 @@ function SinglePost() {
 									Content: <span className="">{data?.catSlug}</span>{" "}
 								</div>
 								<div>
-									<Link href={"/profile/" + data?.user.id}>
+									<Link href={"profile/" + data?.user.id}>
 										Author: {data?.user.name}
 									</Link>
 									<Image

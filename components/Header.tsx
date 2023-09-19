@@ -8,7 +8,7 @@ function Header() {
 	return (
 		<>
 			<div className="flex justify-between items-center p-8 w-[100%] h-[3vh] bg-white border-b-black border-[1px]">
-				<Link href={'/'}>
+				<Link href={''}>
 					<Image
 						priority
 						src="/Cafe.png"
@@ -19,13 +19,13 @@ function Header() {
 					/>
 				</Link>
 				<div className="flex flex-row gap-3 justify-between items-center">
-					<Link href={"/room"}>Rooms</Link>
-					<Link href={"/movies"}>Movies</Link>
-					<Link href={"/food"}>Foods</Link>
-					<Link href={"/post"}>Blogs</Link>
+					<Link href={""}>Rooms</Link>
+					<Link href={""}>Movies</Link>
+					<Link href={""}>Foods</Link>
+					<Link href={""}>Blogs</Link>
 					{status === "authenticated" ? (
 						<div className="flex flex-row gap-3 justify-between items-center">
-							<Link href={"/profile"}>
+							<Link href={"profile"}>
 								<Image
 									src={data?.user?.image as string}
 									alt="img-user"
@@ -34,9 +34,9 @@ function Header() {
 									height={50}
 								/>
 							</Link>
-							<Link href={"/writing"}>Writing</Link>
+							<Link href={"writing"}>Writing</Link>
 							{/* <div>{data?.user?.email}</div> */}
-							<Link href={"/"} onClick={() => signOut()}>
+							<Link href={""} onClick={() => signOut()}>
 								Logout
 							</Link>
 						</div>
