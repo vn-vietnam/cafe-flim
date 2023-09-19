@@ -1,6 +1,6 @@
 "use client";
 import axios from "axios";
-import { useSession} from "next-auth/react";
+import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useRef, useState } from "react";
 import { Editor } from "@tinymce/tinymce-react";
@@ -9,16 +9,11 @@ type Inputs = {
 	title: string;
 	desc: string;
 	slug: string;
+	userEmail: string;
 };
 function Writing() {
 	const editorRef = useRef<TinyMCEEditor | null>(null);
-	// useEffect(() => {
-	// 	console.log(editorRef.current?.getContent());
-	// });
-	// const log = () => {
-	// };
 	const { data, status } = useSession();
-
 	const router = useRouter();
 	const [file, setFile] = useState<File>();
 	const [select, setSelect] = useState("news");
@@ -26,6 +21,7 @@ function Writing() {
 		title: "",
 		desc: "",
 		slug: "",
+		userEmail: "",
 	});
 	if (status === "loading") {
 		return (
@@ -74,7 +70,7 @@ function Writing() {
 				}
 			);
 			const res = await response.json();
-			console.log(res.url);
+			// console.log(res.url);
 			axios
 				.post(`${process.env.NEXT_PUBLIC_URL}api/post`, {
 					...inputs,
@@ -112,6 +108,14 @@ function Writing() {
 				className="w-[100%] px-5 h-[100px] border-black border-[1x] bg-slate-100"
 				onChange={handleChange}
 				placeholder="Title"
+			/>
+			<span>Email:</span>
+			<input
+				type="text"
+				name="userEmail"
+				className="w-[100%] px-5 h-[100px] border-black border-[1x] bg-slate-100"
+				onChange={handleChange}
+				placeholder="Email"
 			/>
 
 			<span>Slug:</span>
@@ -186,4 +190,3 @@ function Writing() {
 }
 
 export default Writing;
-

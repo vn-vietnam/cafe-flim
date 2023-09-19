@@ -1,14 +1,28 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { signOut, useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
+
+type Data = {
+	user: {
+		name: string;
+		email: string;
+		id: string;
+		type: string;
+		image: string;
+	};
+	session: {
+		id: string;
+	};
+};
+
 function Header() {
 	const { data, status } = useSession();
 	return (
 		<>
 			<div className="flex justify-between items-center p-8 w-[100%] h-[3vh] bg-white border-b-black border-[1px]">
-				<Link href={'/'}>
+				<Link href={"/"}>
 					<Image
 						priority
 						src="/Cafe.png"
@@ -34,8 +48,15 @@ function Header() {
 									height={50}
 								/>
 							</Link>
+
 							<Link href={"/writing"}>Writing</Link>
-							{/* <div>{data?.user?.email}</div> */}
+							{data?.user?.type === "admin" ? (
+								<>
+									<Link href={"/dashboard"}>Dashboard</Link>
+								</>
+							) : (
+								<></>
+							)}
 							<Link href={"/"} onClick={() => signOut()}>
 								Logout
 							</Link>
