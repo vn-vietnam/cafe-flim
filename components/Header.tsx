@@ -21,7 +21,6 @@ type Data = {
 function Header() {
 	const { data, status } = useSession();
 	const [openList, setOpenList] = useState(false);
-	console.log(openList);
 	return (
 		<div className="relative">
 			<div className="flex justify-between items-center p-8 w-[100%] h-[3vh] bg-white border-b-black border-[1px]">
