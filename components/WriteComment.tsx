@@ -37,6 +37,7 @@ function WriteComment(data: any) {
 				console.log(response);
 				// router.push(`/post`);
 				router.push(`/post/${data?.data?.id}`)
+				window.location.reload()
 			})
 			.catch(function (error) {
 				// handle error

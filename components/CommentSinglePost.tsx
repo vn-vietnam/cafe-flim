@@ -35,8 +35,8 @@ function CommentSinglePost(slug: any) {
 							return (
 								<div key={e?.id}>
 									<div className="flex">
-										<Link
-											href={"/post/" + e?.id}
+										<div
+											// href={"/post/" + e?.id}
 											className="flex w-[200px] h-[150px] flex-col justify-start items-start gap-3 "
 											id={e?.id}
 										>
@@ -56,7 +56,7 @@ function CommentSinglePost(slug: any) {
 											<div className="text-[10px] font-semibold">
 												{e?.createdAt}
 											</div>
-										</Link>
+										</div>
 										<div className=" w-fit border-l-2 px-5">
 											<div>{e?.desc}</div>
 										</div>
