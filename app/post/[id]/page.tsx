@@ -4,6 +4,8 @@ import Link from "next/link";
 import { useParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import parse from "html-react-parser";
+import CommentSinglePost from "@/components/CommentSinglePost";
+import WriteComment from "@/components/WriteComment";
 
 function SinglePost() {
 	const params = useParams();
@@ -16,6 +18,7 @@ function SinglePost() {
 		desc: string;
 		views: number;
 		userEmail: string;
+		slug: string;
 		user: {
 			id: string;
 			name: string;
@@ -34,6 +37,7 @@ function SinglePost() {
 				setLoading(false);
 			});
 	}, [params.id]);
+	// console.log(data);
 	return (
 		<>
 			{loading ? (
@@ -81,6 +85,14 @@ function SinglePost() {
 						<div className="min-h-[100vh]">
 							<div>{parse(data?.desc as string)}</div>
 						</div>
+						{data?.userEmail ? (
+							<>
+								<CommentSinglePost slug={data?.slug} />
+								<WriteComment data={data} />
+							</>
+						) : (
+							<>loading ...</>
+						)}
 					</div>
 				</>
 			)}
@@ -89,5 +101,3 @@ function SinglePost() {
 }
 
 export default SinglePost;
-
-

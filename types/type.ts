@@ -11,3 +11,8 @@ export type PostType = {
 	Category?: { title: String; img?: String };
 	User?: { name?: String; email?: String; image?: String };
 };
+
+
+export type CommentType = {
+	
+}
