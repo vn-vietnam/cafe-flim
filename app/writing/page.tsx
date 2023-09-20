@@ -98,9 +98,9 @@ function Writing() {
 	return (
 		<form
 			onSubmit={handleSubmit}
-			className="w-[100%] p-8 min-h-[100vh] flex flex-col gap-5"
+			className="w-[100%] p-8 min-h-[100vh] flex flex-col gap-5 font-Mooli"
 		>
-			<div>Write a post</div>
+			<div className="text-xl font-Croissant">Write a post</div>
 			<span>Title:</span>
 			<input
 				type="text"

@@ -1,0 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Croissant+One&family=Inclusive+Sans&family=Mooli&family=Noto+Sans+JP:wght@400;500;700&display=swap");
+
+:root {
+	--font--Anton: "Anton", sans-serif;
+	--font--Croissant: "Croissant One", cursive;
+	--font--Inclusive: "Inclusive Sans", sans-serif;
+	--font--Mooli: "Mooli", sans-serif;
+	--font--Noto: "Noto Sans JP", sans-serif;
+}
+

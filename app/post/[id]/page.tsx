@@ -41,7 +41,7 @@ function SinglePost() {
 	return (
 		<>
 			{loading ? (
-				<div className="w-[100%] h-[70vh]">loading</div>
+				<div className="w-[100%] h-[100vh]">loading.........................</div>
 			) : (
 				<>
 					<div className="flex m-8 flex-col">
@@ -82,7 +82,7 @@ function SinglePost() {
 							</div>
 						</div>
 
-						<div className="min-h-[100vh]">
+						<div className="">
 							<div>{parse(data?.desc as string)}</div>
 						</div>
 						{data?.userEmail ? (
