@@ -17,7 +17,7 @@ const getData = async () => {
 
 const Posts = async () => {
 	const posts: PostType = await getData();
-	console.log(posts);
+	// console.log(posts);
 	return (
 		<div className="w-[100%]  p-8">
 			<div className="flex my-10 justify-between items-center">
@@ -46,7 +46,7 @@ const Posts = async () => {
 									alt="img"
 									width={300}
 									height={150}
-									className="object-cover lg:w-[450px] lg-h-[350px] rounded-md opacity-90"
+									className="object-cover h-[300px] w-[400px] lg:w-[450px] lg-h-[350px] rounded-md opacity-90"
 								/>
 								<div className="text-[16px] font-Mooli absolute bottom-2 left-2 font-bold capitalize">
 									{e?.catSlug}

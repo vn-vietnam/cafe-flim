@@ -122,7 +122,7 @@ function SinglePost() {
 						</div>
 
 						<div className=" min-h-[300px] border-y-2 py-5 ">
-							<div className="font-Noto text-xl">
+							<div className="font-Inclusive text-xl font-[300] w-[100%] md:w-[60%] m-auto">
 								{parse(data?.desc as string || "") }
 							</div>
 						</div>
