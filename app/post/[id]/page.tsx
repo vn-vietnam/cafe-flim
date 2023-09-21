@@ -72,8 +72,8 @@ function SinglePost() {
 				</>
 			) : (
 				<>
-					<div className="flex m-8 flex-col gap-5">
-						<div className="flex gap-3 font-anton">
+					<div className="flex m-8 flex-col gap-5 ">
+						<div className="flex gap-3 font-anton flex-wrap">
 							<Link href={"/"}>Main</Link>
 							<div> {">"} </div>
 							<Link href={"/post"}>Posts</Link>

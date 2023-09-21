@@ -7,7 +7,7 @@ export default function Home() {
 		<div className="min-h-100vh">
 			<SwiperPage />
 			<Posts />
-			<Food />
+			{/* <Food /> */}
 		</div>
 	);
 }

@@ -85,7 +85,7 @@ function Dashboard() {
 					{data?.map((e: any) => {
 						return (
 							<div key={e?.id}>
-								<div className="flex flex-row gap-5 justify-between items-center p-2 rounded hover:bg-slate-300 h-[50px]">
+								<div className="flex sm:flex-row flex-col gap-5 justify-between items-center p-2 rounded  h-[100px]">
 									<Link href={`/post/${e?.id}`} className="hover:underline">
 										{e?.title}
 									</Link>
