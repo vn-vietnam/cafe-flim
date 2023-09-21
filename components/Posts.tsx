@@ -3,6 +3,7 @@ import Link from "next/link";
 import React from "react";
 import Image from "next/image";
 
+
 const getData = async () => {
 	const res = await fetch(`${process.env.NEXT_PUBLIC_URL}api/post?page=1`, {
 		cache: "no-store",
@@ -16,8 +17,9 @@ const getData = async () => {
 };
 
 const Posts = async () => {
+
 	const posts: PostType = await getData();
-	// console.log(posts);
+	
 	return (
 		<div className="w-[100%]  p-8">
 			<div className="flex my-10 justify-between items-center">
@@ -48,11 +50,11 @@ const Posts = async () => {
 									height={150}
 									className="object-cover h-[300px] w-[400px] lg:w-[450px] lg-h-[350px] rounded-md opacity-90"
 								/>
-								<div className="text-[16px] font-Mooli absolute bottom-2 left-2 font-bold capitalize">
+								<div className="text-[16px] font-Mooli absolute bottom-0 left-0 rounded-bl rounded-tr p-2 font-bold capitalize text-white bg-slate-400">
 									{e?.catSlug}
 								</div>
 							</div>
-							<div className="text-[16px] w-[300px] font-semibold font-anton text-xl break-words hover:underline hover:underline-offset-4">
+							<div className="text-[16px] w-[300px] font-anton text-xl break-words hover:underline hover:underline-offset-4">
 								{e?.title}
 							</div>
 						</Link>

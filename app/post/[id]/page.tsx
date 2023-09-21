@@ -37,8 +37,16 @@ function SinglePost() {
 				setLoading(false);
 			});
 	}, [params.id]);
+
+	function handleMoveTop() {
+		window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
+	}
+
 	return (
-		<>
+		<div className="relative">
+			<div className="fixed bottom-[30px] right-[30px]" onClick={handleMoveTop}>
+				<Image src={"/arrow-up-circle.svg"} alt="icon" width={50} height={50} />
+			</div>
 			{loading ? (
 				<>
 					<div className="font-[500] w-40 bg-slate-200 rounded h-8 m-8"></div>
@@ -71,14 +79,19 @@ function SinglePost() {
 					</div>
 				</>
 			) : (
-				<>
+				<div id="top">
 					<div className="flex m-8 flex-col gap-5 ">
 						<div className="flex gap-3 font-anton flex-wrap">
 							<Link href={"/"}>Main</Link>
 							<div> {">"} </div>
 							<Link href={"/post"}>Posts</Link>
 							<div> {">"} </div>
-							<Link className="capitalize" href={`/category?cat=${data?.catSlug}`}>{data?.catSlug}</Link>
+							<Link
+								className="capitalize"
+								href={`/category?cat=${data?.catSlug}`}
+							>
+								{data?.catSlug}
+							</Link>
 							<div> {">"} </div>
 							<div className="capitalize">{data?.title}</div>
 						</div>
@@ -122,22 +135,22 @@ function SinglePost() {
 						</div>
 
 						<div className=" min-h-[300px] border-y-2 py-5 ">
-							<div className="font-Inclusive text-xl font-[300] w-[100%] md:w-[60%] m-auto">
-								{parse(data?.desc as string || "") }
+							<div className="font-Inclusive text-xl leading-[3rem] font-[300] w-[100%] md:w-[60%] m-auto">
+								{parse((data?.desc as string) || "")}
 							</div>
 						</div>
 						{data?.userEmail ? (
 							<>
 								<CommentSinglePost slug={data?.slug} />
-								<WriteComment data={data} />
+								<WriteComment dataUser={data} />
 							</>
 						) : (
 							<>loading ...</>
 						)}
 					</div>
-				</>
+				</div>
 			)}
-		</>
+		</div>
 	);
 }
 

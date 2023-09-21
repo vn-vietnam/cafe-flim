@@ -10,12 +10,13 @@ type IContents = {
 	userEmail: string;
 	postSlug: string;
 };
-function WriteComment(data: any) {
+function WriteComment(dataUser: any) {
+	// console.log(dataUser);
 	const router = useRouter();
 	const [content, setContent] = useState<IContents>({
 		desc: "",
-		postSlug: data?.data?.slug,
-		userEmail: data?.data?.userEmail,
+		postSlug: dataUser?.data?.slug,
+		userEmail: dataUser?.data?.userEmail,
 	});
 	const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
 		setContent((x) => {
@@ -33,21 +34,22 @@ function WriteComment(data: any) {
 				...content,
 			})
 			.then(function (response) {
+				toast("Comment successfully !!!");
 				// handle success
 				console.log(response);
 				// router.push(`/post`);
-				router.push(`/post/${data?.data?.id}`);
+				router.push(`/post/${dataUser?.data?.id}`);
 				window.location.reload();
 			})
 			.catch(function (error) {
 				// handle error
+				toast("Please login to comment !");
 				console.log(error);
 			})
 			.finally(function () {
 				// always executed
 			});
 	};
-	const notify = () => toast("Comment successfully !!!");
 	return (
 		<>
 			<ToastContainer />
@@ -61,7 +63,6 @@ function WriteComment(data: any) {
 				<button
 					className="w-[100px] h-[50px] border-[1px] border-black"
 					type="submit"
-					onClick={notify}
 				>
 					Submit
 				</button>

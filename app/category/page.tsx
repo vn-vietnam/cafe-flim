@@ -47,7 +47,7 @@ const Category = () => {
 							className=" flex flex-col gap-3 justify-start  items-start"
 							id={e?.id}
 						>
-							<div className="">
+							<div className="w-[100%] relative">
 								<Image
 									src={
 										e?.img ||
@@ -56,13 +56,16 @@ const Category = () => {
 									alt="img"
 									width={300}
 									height={150}
-									className="object-cover lg:w-[450px] lg-h-[350px] rounded-md "
+									className="object-cover h-[300px] w-[400px] lg:w-[450px] lg-h-[350px] rounded-md "
 								/>
+								<div className="text-[16px] font-Mooli absolute bottom-0 left-0 rounded-bl rounded-tr p-2 font-bold capitalize text-white bg-slate-400">
+									{e?.catSlug}
+								</div>
 							</div>
-							<div className="text-[16px] font-semibold w-[80%] text break-all lien font-anton text-xl hover:underline hover:underline-offset-4">
+							<div className="text-[16px]  w-[80%] text break-all lien font-anton text-xl hover:underline hover:underline-offset-4">
 								{e?.title}
 							</div>
-							<div className="text-[16px] font-Mooli">Views: {e?.views}</div>
+							
 						</Link>
 					</>
 				))}
