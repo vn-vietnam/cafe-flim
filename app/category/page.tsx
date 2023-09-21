@@ -25,7 +25,7 @@ const Category = () => {
 			<div className="flex gap-3 font-anton">
 				<Link href={"/"}>Main</Link>
 				<div> {">"} </div>
-				<Link href={"/post"}>Post</Link>
+				<Link href={"/post"}>Posts</Link>
 				<div> {">"} </div>
 				<div className="capitalize">{category}</div>
 			</div>

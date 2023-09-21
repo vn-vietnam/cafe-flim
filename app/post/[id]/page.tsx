@@ -40,35 +40,48 @@ function SinglePost() {
 	return (
 		<>
 			{loading ? (
-				<div className="h-[100vh] justify-start flex m-8 flex-col gap-5  animate-pulse">
-					<div className=" h-[300px] bg-slate-200 rounded"></div>
-					<h1 className="font-anton capitalize text-3xl w-52 bg-slate-200 rounded h-5"></h1>
-					<div className="flex justify-between items-start my-5 font-Noto sm:flex-row flex-col gap-3 ">
-						<div className="flex flex-col gap-3">
-							<div className="font-[500] w-40 bg-slate-200 rounded h-5"></div>
-							<div className="font-[500] w-32 bg-slate-200 rounded h-5"></div>
-						</div>
+				<>
+					<div className="font-[500] w-40 bg-slate-200 rounded h-8 m-8"></div>
 
-						<div className="flex gap-3 font-[500] justify-between">
-							<div className="flex gap-3 flex-col">
-								<div className="w-32 bg-slate-200 rounded h-5">
-									<span className="capitalize"></span>
+					<div className="h-[100vh] justify-start flex m-8 flex-col gap-5  animate-pulse">
+						<div className=" h-[300px] bg-slate-200 rounded"></div>
+						<h1 className="font-anton capitalize text-3xl w-52 bg-slate-200 rounded h-5"></h1>
+						<div className="flex justify-between items-start my-5 font-Noto sm:flex-row flex-col gap-3 ">
+							<div className="flex flex-col gap-3">
+								<div className="font-[500] w-40 bg-slate-200 rounded h-5"></div>
+								<div className="font-[500] w-32 bg-slate-200 rounded h-5"></div>
+							</div>
+
+							<div className="flex gap-3 font-[500] justify-between">
+								<div className="flex gap-3 flex-col">
+									<div className="w-32 bg-slate-200 rounded h-5">
+										<span className="capitalize"></span>
+									</div>
+									<div className="w-24 bg-slate-200 rounded h-5"></div>
 								</div>
-								<div className="w-24 bg-slate-200 rounded h-5"></div>
-							</div>
-							<div>
-								<div className="w-14  bg-slate-200 rounded-full h-14"></div>
+								<div>
+									<div className="w-14  bg-slate-200 rounded-full h-14"></div>
+								</div>
 							</div>
 						</div>
-					</div>
 
-					<div className=" min-h-[300px] border-y-2 py-5  bg-slate-200 rounded ">
-						<div className="font-Noto text-xl"></div>
+						<div className=" min-h-[300px] border-y-2 py-5  bg-slate-200 rounded ">
+							<div className="font-Noto text-xl"></div>
+						</div>
 					</div>
-				</div>
+				</>
 			) : (
 				<>
 					<div className="flex m-8 flex-col gap-5">
+						<div className="flex gap-3 font-anton">
+							<Link href={"/"}>Main</Link>
+							<div> {">"} </div>
+							<Link href={"/post"}>Posts</Link>
+							<div> {">"} </div>
+							<Link className="capitalize" href={`/category?cat=${data?.catSlug}`}>{data?.catSlug}</Link>
+							<div> {">"} </div>
+							<div className="capitalize">{data?.title}</div>
+						</div>
 						<div className="relative w-[100%] h-[300px]">
 							<Image
 								src={

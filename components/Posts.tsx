@@ -22,17 +22,22 @@ const Posts = async () => {
 		<div className="w-[100%]  p-8">
 			<div className="flex my-10 justify-between items-center">
 				<h1 className=" text-[32px] font-Croissant">New Articles</h1>
-				<Link href={"/post"} className="font-Mooli text-lg hover:underline hover:underline-offset-4">See all</Link>
+				<Link
+					href={"/post"}
+					className="font-Mooli text-lg hover:underline hover:underline-offset-4"
+				>
+					See all
+				</Link>
 			</div>
 			<div className="flex md:justify-between  justify-center w-[100%]  flex-wrap gap-5">
 				{posts?.map((e) => (
 					<>
 						<Link
 							href={"/post/" + e?.id}
-							className=" flex flex-col gap-3 justify-start  items-start"
+							className=" flex flex-col gap-3 justify-start  items-start "
 							id={e?.id}
 						>
-							<div className="">
+							<div className="w-[100%] relative">
 								<Image
 									src={
 										e?.img ||
@@ -41,11 +46,15 @@ const Posts = async () => {
 									alt="img"
 									width={300}
 									height={150}
-									className="object-cover lg:w-[450px] lg-h-[350px] rounded-md "
+									className="object-cover lg:w-[450px] lg-h-[350px] rounded-md opacity-90"
 								/>
+								<div className="text-[16px] font-Mooli absolute bottom-2 left-2 font-bold capitalize">
+									{e?.catSlug}
+								</div>
 							</div>
-							<div className="text-[16px] font-semibold font-anton text-xl hover:underline hover:underline-offset-4">{e?.title}</div>
-							<div className="text-[16px] font-Mooli">Views: {e?.views}</div>
+							<div className="text-[16px] w-[300px] font-semibold font-anton text-xl break-words hover:underline hover:underline-offset-4">
+								{e?.title}
+							</div>
 						</Link>
 					</>
 				))}
