@@ -7,7 +7,8 @@ export const GET = async (req: NextRequest) => {
 	const cat: any = searchParams.get("cat");
 	const page: any = searchParams.get("page");
 	const POST_PER_PAGE = 3;
-
+	const session: any = await getAuthSession();
+	// console.log(session.user.type);
 	const query = {
 		take: POST_PER_PAGE,
 		skip: POST_PER_PAGE * (page - 1),
@@ -17,7 +18,10 @@ export const GET = async (req: NextRequest) => {
 		},
 	};
 	try {
-		if (searchParams.size === 0) {
+		if (session?.user?.type === "admin") {
+			const posts = await prisma.post.findMany();
+			return new NextResponse(JSON.stringify(posts), { status: 200 });
+		} else if (searchParams.size === 0) {
 			const posts = await prisma.post.findMany({
 				where: {
 					public: true,
@@ -51,7 +55,7 @@ export const GET = async (req: NextRequest) => {
 // CREATE A POST
 export const POST = async (req: NextRequest) => {
 	const session = await getAuthSession();
-	console.log(session);
+	// console.log(session);
 	if (!session) {
 		return new NextResponse(JSON.stringify({ message: "Not Authenticated!" }), {
 			status: 401,
@@ -66,7 +70,7 @@ export const POST = async (req: NextRequest) => {
 
 		return new NextResponse(JSON.stringify(post), { status: 200 });
 	} catch (err) {
-		console.log("Loi~ ne" + err);
+		console.log(err);
 		return new NextResponse(
 			JSON.stringify({ message: "Something went wrong!" }),
 			{ status: 500 }

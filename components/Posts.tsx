@@ -17,7 +17,7 @@ const getData = async () => {
 
 const Posts = async () => {
 	const posts: PostType = await getData();
-	// console.log(posts);
+	console.log(posts);
 	return (
 		<div className="w-[100%]  p-8">
 			<div className="flex my-10 justify-between items-center">

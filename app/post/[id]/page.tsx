@@ -105,13 +105,13 @@ function SinglePost() {
 									<div>
 										Content: <span className="capitalize">{data?.catSlug}</span>
 									</div>
-									<div>Author: {data?.user.name}</div>
+									<div>Author: {data?.user?.name}</div>
 								</div>
 								<div>
-									<Link href={"/profile/" + data?.user.id}>
+									<Link href={"/profile/" + data?.user?.id}>
 										<Image
 											className="rounded-full"
-											src={data?.user.image as string}
+											src={data?.user?.image as string}
 											alt=""
 											width={50}
 											height={50}
@@ -123,7 +123,7 @@ function SinglePost() {
 
 						<div className=" min-h-[300px] border-y-2 py-5 ">
 							<div className="font-Noto text-xl">
-								{parse(data?.desc as string)}
+								{parse(data?.desc as string || "") }
 							</div>
 						</div>
 						{data?.userEmail ? (
