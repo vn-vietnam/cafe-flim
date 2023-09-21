@@ -21,6 +21,7 @@ function CommentSinglePost(slug: any) {
 		`${process.env.NEXT_PUBLIC_URL}api/comment/${slug?.slug}`,
 		fetcher
 	);
+
 	return (
 		<div className="w-[100%]  flex flex-col gap-5">
 			<h1 className="font-anton text-3xl">Comments</h1>

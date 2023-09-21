@@ -9,7 +9,7 @@ import WriteComment from "@/components/WriteComment";
 
 function SinglePost() {
 	const params = useParams();
-	const [data, setData] = useState<{
+	const [dataPost, setDataPost] = useState<{
 		title: string;
 		img?: string;
 		id: string;
@@ -33,15 +33,14 @@ function SinglePost() {
 		})
 			.then((res) => res.json())
 			.then((data) => {
-				setData(data);
+				setDataPost(data);
 				setLoading(false);
 			});
 	}, [params.id]);
 
 	function handleMoveTop() {
-		window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
+		window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
 	}
-
 	return (
 		<div className="relative">
 			<div className="fixed bottom-[30px] right-[30px]" onClick={handleMoveTop}>
@@ -88,17 +87,17 @@ function SinglePost() {
 							<div> {">"} </div>
 							<Link
 								className="capitalize"
-								href={`/category?cat=${data?.catSlug}`}
+								href={`/category?cat=${dataPost?.catSlug}`}
 							>
-								{data?.catSlug}
+								{dataPost?.catSlug}
 							</Link>
 							<div> {">"} </div>
-							<div className="capitalize">{data?.title}</div>
+							<div className="capitalize">{dataPost?.title}</div>
 						</div>
 						<div className="relative w-[100%] h-[300px]">
 							<Image
 								src={
-									data?.img ||
+									dataPost?.img ||
 									"https://images.unsplash.com/photo-1519882189396-71f93cb4714b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8amFwYW4lMjBmbG93ZXJ8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60"
 								}
 								alt=""
@@ -106,25 +105,30 @@ function SinglePost() {
 								className="object-cover"
 							/>
 						</div>
-						<h1 className="font-anton capitalize text-3xl">{data?.title}</h1>
+						<h1 className="font-anton capitalize text-3xl">
+							{dataPost?.title}
+						</h1>
 						<div className="flex justify-between items-start my-5 font-Noto sm:flex-row flex-col gap-3 ">
 							<div className="flex flex-col gap-3">
-								<div className="font-[500]">Day release: {data?.createdAt}</div>
-								<div className="font-[500]">Views: {data?.views}</div>
+								<div className="font-[500]">
+									Day release: {dataPost?.createdAt}
+								</div>
+								<div className="font-[500]">Views: {dataPost?.views}</div>
 							</div>
 
 							<div className="flex gap-3 font-[500] justify-between">
 								<div className="flex gap-3 flex-col">
 									<div>
-										Content: <span className="capitalize">{data?.catSlug}</span>
+										Content:{" "}
+										<span className="capitalize">{dataPost?.catSlug}</span>
 									</div>
-									<div>Author: {data?.user?.name}</div>
+									<div>Author: {dataPost?.user?.name}</div>
 								</div>
 								<div>
-									<Link href={"/profile/" + data?.user?.id}>
+									<Link href={"/profile/" + dataPost?.user?.id}>
 										<Image
 											className="rounded-full"
-											src={data?.user?.image as string}
+											src={dataPost?.user?.image as string}
 											alt=""
 											width={50}
 											height={50}
@@ -136,17 +140,12 @@ function SinglePost() {
 
 						<div className=" min-h-[300px] border-y-2 py-5 ">
 							<div className="font-Inclusive text-xl leading-[3rem] font-[300] w-[100%] md:w-[60%] m-auto">
-								{parse((data?.desc as string) || "")}
+								{parse((dataPost?.desc as string) || "")}
 							</div>
 						</div>
-						{data?.userEmail ? (
-							<>
-								<CommentSinglePost slug={data?.slug} />
-								<WriteComment dataUser={data} />
-							</>
-						) : (
-							<>loading ...</>
-						)}
+
+						<CommentSinglePost slug={dataPost?.slug} />
+						<WriteComment slug={dataPost?.slug} />
 					</div>
 				</div>
 			)}
