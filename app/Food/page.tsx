@@ -2,7 +2,7 @@ import React from 'react'
 
 function Food() {
   return (
-    <div>Food</div>
+	<div className='min-h-[100vh]'></div>
   )
 }
 

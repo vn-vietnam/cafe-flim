@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-
+const inter = Inter({ subsets: ["latin"] });
 import "./main.css";
 export const metadata: Metadata = {
 	title: "Cafe Film",
@@ -23,7 +23,7 @@ export default function RootLayout({
 				<head>
 					<link rel="icon" href="/cafe-logo.png" />
 				</head>
-				<body className="container-bg">
+				<body className={inter.className}>
 					<Header />
 					{children}
 					<Footer />
