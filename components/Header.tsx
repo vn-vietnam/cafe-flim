@@ -1,9 +1,8 @@
 "use client";
-import React, { useState } from "react";
+import React, {useState } from "react";
 import { signOut, useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
-import { AlignLeft } from "lucide";
 
 type Data = {
 	user: {
@@ -22,8 +21,8 @@ function Header() {
 	const { data, status } = useSession();
 	const [openList, setOpenList] = useState(false);
 	return (
-		<div className="relative">
-			<div className="flex justify-between items-center p-8 w-[100%] h-[3vh] bg-white border-b-black border-[1px]">
+		<div className={`relative`}>
+			<div className="flex justify-between items-center p-8 w-[100%] h-[3vh]  border-b-black border-[1px]">
 				<Link href={"/"}>
 					<Image
 						priority

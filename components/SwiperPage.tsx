@@ -51,7 +51,9 @@ function SwiperPage() {
 				{isLoading ? (
 					<>
 						<SwiperSlide>
-							<Image src={"/bg.jpg"} alt="" fill />
+							<div className="relative">
+								<Image src={"/bg.jpg"} alt="" fill  />
+							</div>
 						</SwiperSlide>
 					</>
 				) : (

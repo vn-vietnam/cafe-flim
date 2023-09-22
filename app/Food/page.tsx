@@ -1,9 +1,9 @@
 import React from 'react'
 
-function Food() {
+function page() {
   return (
-	<div className='min-h-[100vh]'></div>
+    <div>page</div>
   )
 }
 
-export default Food
+export default page

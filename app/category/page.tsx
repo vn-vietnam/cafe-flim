@@ -41,11 +41,12 @@ const Category = () => {
 			</div>
 			<div className="flex md:justify-between  justify-center w-[100%]  flex-wrap gap-5">
 				{data?.map((e) => (
-					<>
+					
 						<Link
 							href={"/post/" + e?.id}
 							className=" flex flex-col gap-3 justify-start  items-start"
 							id={e?.id}
+							key={e?.id}
 						>
 							<div className="w-[100%] relative">
 								<Image
@@ -67,7 +68,7 @@ const Category = () => {
 							</div>
 							
 						</Link>
-					</>
+					
 				))}
 			</div>
 		</div>
