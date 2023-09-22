@@ -1,9 +1,9 @@
 import React from 'react'
 
-function page() {
+function Food() {
   return (
-    <div>page</div>
+    <div>Food</div>
   )
 }
 
-export default page
+export default Food

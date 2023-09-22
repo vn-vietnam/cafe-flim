@@ -21,7 +21,7 @@ function Header() {
 	const { data, status } = useSession();
 	const [openList, setOpenList] = useState(false);
 	return (
-		<div className={`relative`}>
+		<div className="relative">
 			<div className="flex justify-between items-center p-8 w-[100%] h-[3vh]  border-b-black border-[1px]">
 				<Link href={"/"}>
 					<Image

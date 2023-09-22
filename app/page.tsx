@@ -3,7 +3,7 @@ import Food from "./Food/page";
 import SwiperPage from "@/components/SwiperPage";
 export default function Home() {
 	return (
-		<div>
+		<div className="min-h-100vh">
 			<SwiperPage />
 			<Posts />
 			{/* <Food /> */}
