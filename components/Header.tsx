@@ -43,7 +43,7 @@ function Header() {
 				</div>
 
 				<div className=" flex-row gap-3 justify-between items-center font-Noto font-[500] sm:flex hidden">
-					<Link href={"/"}>Rooms</Link>
+					<Link href={"/room"}>Rooms</Link>
 					<Link href={"/"}>Movies</Link>
 					<Link href={"/"}>Foods</Link>
 					<Link href={"/post"}>Blogs</Link>

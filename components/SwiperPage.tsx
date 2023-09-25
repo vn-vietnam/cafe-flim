@@ -49,11 +49,11 @@ function SwiperPage() {
 				className="mySwiper "
 			>
 				{isLoading ? (
-					<>
+					<div className="animate-pulse">
 						<SwiperSlide>
-							<Image src={"/bg.jpg"} alt="" fill />
+							<div className="bg-slate-200 w-[100%] h-[100%]"></div>
 						</SwiperSlide>
-					</>
+					</div>
 				) : (
 					<>
 						{data.map((e: any) => {

@@ -36,15 +36,15 @@ export default async function Post() {
 			<div className="flex justify-between items-center">
 				<h1 className=" text-[32px] my-5 font-Croissant">New Articles</h1>
 			</div>
-			<div className="flex md:justify-between  justify-center w-[100%]  flex-wrap gap-5">
+			<div className="flex md:justify-between justify-start items-center w-[100%]  flex-wrap gap-5">
 				{posts?.map((e) => (
 					<>
 						<Link
 							href={"/post/" + e?.id}
-							className=" flex flex-col gap-3 justify-start  items-start"
+							className=" flex flex-col gap-3 justify-start items-start w-auto"
 							id={e?.id}
 						>
-							<div className="w-[100%] relative">
+							<div className="w-fit relative">
 								<Image
 									src={
 										e?.img ||
@@ -59,7 +59,7 @@ export default async function Post() {
 									{e?.catSlug}
 								</div>
 							</div>
-							<div className="text-[16px] w-[80%] text break-all lien font-anton text-xl hover:underline hover:underline-offset-4">
+							<div className="text-[16px] w-[400px] h-[80px] lg:w-[450px] text break-all lien font-anton text-xl hover:underline hover:underline-offset-4">
 								{e?.title}
 							</div>
 							

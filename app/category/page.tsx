@@ -39,7 +39,7 @@ const Category = () => {
 			<div className="flex justify-between items-center">
 				<h1 className=" text-[32px] my-5 font-Croissant capitalize">{category}</h1>
 			</div>
-			<div className="flex md:justify-between  justify-center w-[100%]  flex-wrap gap-5">
+			<div className="flex md:justify-between  justify-start w-[100%]  flex-wrap gap-5">
 				{data?.map((e) => (
 					
 						<Link
@@ -63,7 +63,7 @@ const Category = () => {
 									{e?.catSlug}
 								</div>
 							</div>
-							<div className="text-[16px]  w-[80%] text break-all lien font-anton text-xl hover:underline hover:underline-offset-4">
+							<div className="text-[16px]  w-[400px] h-[80px] lg:w-[450px]  text break-all lien font-anton text-xl hover:underline hover:underline-offset-4">
 								{e?.title}
 							</div>
 							

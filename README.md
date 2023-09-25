@@ -34,3 +34,15 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
 - dashboard to accept post public.
+- category room
+
+- room:
+	Type:
++ small rooms ( 2 people )
++ medium rooms ( 4-6 people )
++ big rooms ( 8-10 people )
++ giant rooms ( 10-20 people )
++ theater ( 20+ people )
+
+	Number:
+	
