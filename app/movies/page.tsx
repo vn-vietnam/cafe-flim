@@ -16,7 +16,7 @@ import useFetch from "@/components/useFetch";
 import Link from "next/link";
 
 function Movies() {
-	const { data, loading } = useFetch("/movie/upcoming", "");
+	const { data, loading } = useFetch(`/movie/upcoming?api_key=${process.env.NEXT_PUBLIC_KEY_TMDB}`, "");
 	// console.log(loading);
 	return (
 		<div>
