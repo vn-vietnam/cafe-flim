@@ -23,15 +23,15 @@ const Posts = async () => {
 	return (
 		<div className="w-[100%]  p-8">
 			<div className="flex my-10 justify-between items-center">
-				<h1 className=" text-[32px] font-Croissant">New Articles</h1>
+				<h1 className=" text-[20px] font-Croissant">New Articles</h1>
 				<Link
 					href={"/post"}
-					className="font-Mooli text-lg hover:underline hover:underline-offset-4"
+					className="font-Mooli text-[16px] hover:underline hover:underline-offset-4 px-4 py-2 bg-black rounded-full text-white "
 				>
 					See all
 				</Link>
 			</div>
-			<div className="flex md:justify-between  justify-center w-[100%]  flex-wrap gap-5">
+			<div className="flex md:justify-between text-[16px]  justify-center w-[100%]  flex-wrap gap-5">
 				{posts?.map((e) => (
 					<>
 						<Link

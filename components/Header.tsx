@@ -22,7 +22,7 @@ function Header() {
 	const [openList, setOpenList] = useState(false);
 	return (
 		<div className="relative">
-			<div className="flex justify-between items-center p-8 w-[100%] h-[3vh] bg-white border-b-black border-[1px]">
+			<div className="flex text-[14px] justify-between items-center p-8 w-[100%] h-[3vh] bg-white border-b-black border-[1px]">
 				<Link href={"/"}>
 					<Image
 						priority
@@ -42,7 +42,7 @@ function Header() {
 					/>
 				</div>
 
-				<div className=" flex-row gap-3 justify-between items-center font-Noto font-[500] sm:flex hidden">
+				<div className=" flex-row gap-3 text-[14px] justify-between items-center font-Noto font-[500] sm:flex hidden">
 					<Link href={"/room"}>Rooms</Link>
 					<Link href={"/movies"}>Movies</Link>
 					<Link href={"/food"}>Foods</Link>
@@ -78,7 +78,7 @@ function Header() {
 			</div>
 			{openList ? (
 				<>
-					<div className=" h-[10vh]  w-[100%] px-8 flex flex-col items-center justify-center gap-3 border-b-[1px] border-black sm:hidden">
+					<div className=" h-[10vh] text-[14px]  w-[100%] px-8 flex flex-col items-center justify-center gap-3 border-b-[1px] border-black sm:hidden">
 						<div className="flex flex-row gap-3 justify-around items-center font-Noto font-[500] w-[100%]">
 							<Link href={"/"}>Rooms</Link>
 							<Link href={"/"}>Movies</Link>

@@ -79,7 +79,7 @@ function SinglePost() {
 				</>
 			) : (
 				<div id="top">
-					<div className="flex m-8 flex-col gap-5 ">
+					<div className="flex m-8 flex-col gap-5 text-[16px]">
 						<div className="flex gap-3 font-anton flex-wrap">
 							<Link href={"/"}>Main</Link>
 							<div> {">"} </div>
@@ -105,10 +105,10 @@ function SinglePost() {
 								className="object-cover"
 							/>
 						</div>
-						<h1 className="font-anton capitalize text-3xl">
+						<h1 className="font-anton capitalize text-[20px]">
 							{dataPost?.title}
 						</h1>
-						<div className="flex justify-between items-start my-5 font-Noto sm:flex-row flex-col gap-3 ">
+						<div className="flex justify-between items-start text-[14px] my-5 font-Noto sm:flex-row flex-col gap-3 ">
 							<div className="flex flex-col gap-3">
 								<div className="font-[500]">
 									Day release: {dataPost?.createdAt}
@@ -139,7 +139,7 @@ function SinglePost() {
 						</div>
 
 						<div className=" min-h-[300px] border-y-2 py-5 ">
-							<div className="font-Inclusive text-xl leading-[3rem] font-[300] w-[100%] md:w-[60%] m-auto">
+							<div className="font-Inclusive text-[14px] leading-[2rem] font-[300] w-[100%] md:w-[60%] m-auto">
 								{parse((dataPost?.desc as string) || "")}
 							</div>
 						</div>

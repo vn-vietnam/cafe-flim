@@ -21,7 +21,7 @@ const Category = () => {
 			});
 	}, [category]);
 	return (
-		<div className="w-[100%] min-h-[100vh] p-8 flex flex-col gap-3">
+		<div className="w-[100%] min-h-[100vh] p-8 flex flex-col gap-3 text-[16px]">
 			<div className="flex gap-3 font-anton">
 				<Link href={"/"}>Main</Link>
 				<div> {">"} </div>
@@ -37,7 +37,7 @@ const Category = () => {
 				<Link href={"/category?cat=hot-news"}>Hot news</Link>
 			</div>
 			<div className="flex justify-between items-center">
-				<h1 className=" text-[32px] my-5 font-Croissant capitalize">{category}</h1>
+				<h1 className=" text-[20px] my-5 font-Croissant capitalize">{category}</h1>
 			</div>
 			<div className="flex md:justify-between  justify-start w-[100%]  flex-wrap gap-5">
 				{data?.map((e) => (
@@ -59,11 +59,11 @@ const Category = () => {
 									height={150}
 									className="object-cover h-[300px] w-[400px] lg:w-[450px] lg-h-[350px] rounded-md "
 								/>
-								<div className="text-[16px] font-Mooli absolute bottom-0 left-0 rounded-bl rounded-tr p-2 font-bold capitalize text-white bg-slate-400">
+								<div className="text-[14px] font-Mooli absolute bottom-0 left-0 rounded-bl rounded-tr p-2 font-bold capitalize text-white bg-slate-400">
 									{e?.catSlug}
 								</div>
 							</div>
-							<div className="text-[16px]  w-[400px] h-[80px] lg:w-[450px]  text break-all lien font-anton text-xl hover:underline hover:underline-offset-4">
+							<div className="text-[20px]  w-[400px] h-[80px] lg:w-[450px]  text break-all lien font-anton text-xl hover:underline hover:underline-offset-4">
 								{e?.title}
 							</div>
 							
