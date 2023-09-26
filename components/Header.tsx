@@ -81,7 +81,7 @@ function Header() {
 					<div className=" h-[10vh] text-[14px]  w-[100%] px-8 flex flex-col items-center justify-center gap-3 border-b-[1px] border-black sm:hidden">
 						<div className="flex flex-row gap-3 justify-around items-center font-Noto font-[500] w-[100%]">
 							<Link href={"/"}>Rooms</Link>
-							<Link href={"/"}>Movies</Link>
+							<Link href={"/movies"}>Movies</Link>
 							<Link href={"/"}>Foods</Link>
 							<Link href={"/post"}>Blogs</Link>
 						</div>

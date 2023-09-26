@@ -71,37 +71,7 @@ function SwiperPage() {
 					</>
 				)}
 
-				{/* <SwiperSlide>
-					<Image
-						src={
-							"https://images.unsplash.com/photo-1682687219573-3fd75f982217?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHx8&auto=format&fit=crop&w=500&q=60"
-						}
-						alt=""
-						fill
-					/>
-					<h1 className="font-Croissant object-cover text-3xl absolute left-[50px] bottom-[50px] bg-slate-500 text-white p-4 rounded capitalize">
-						image 1
-					</h1>
-				</SwiperSlide> */}
-
-				{/* <SwiperSlide>
-					<h1 className="font-Croissant text-3xl ">image 4</h1>
-				</SwiperSlide>
-				<SwiperSlide>
-					<h1 className="font-Croissant text-3xl ">image 5</h1>
-				</SwiperSlide>
-				<SwiperSlide>
-					<h1 className="font-Croissant text-3xl ">image 6</h1>
-				</SwiperSlide>
-				<SwiperSlide>
-					<h1 className="font-Croissant text-3xl ">image 7</h1>
-				</SwiperSlide>
-				<SwiperSlide>
-					<h1 className="font-Croissant text-3xl ">image 8</h1>
-				</SwiperSlide>
-				<SwiperSlide>
-					<h1 className="font-Croissant text-3xl ">image 9</h1>
-				</SwiperSlide> */}
+				
 			</Swiper>
 		</>
 	);
