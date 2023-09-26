@@ -57,13 +57,13 @@ const Category = () => {
 									alt="img"
 									width={300}
 									height={150}
-									className="object-cover h-[300px] w-[400px] lg:w-[450px] lg-h-[350px] rounded-md "
+									className="object-cover h-[200px] w-[300px] lg:w-[450px] lg-h-[350px] rounded-md "
 								/>
 								<div className="text-[14px] font-Mooli absolute bottom-0 left-0 rounded-bl rounded-tr p-2 font-bold capitalize text-white bg-slate-400">
 									{e?.catSlug}
 								</div>
 							</div>
-							<div className="text-[20px]  w-[400px] h-[80px] lg:w-[450px]  text break-all lien font-anton text-xl hover:underline hover:underline-offset-4">
+							<div className="text-[20px]  w-[300px] h-[80px] lg:w-[450px]  text break-all lien font-anton text-xl hover:underline hover:underline-offset-4">
 								{e?.title}
 							</div>
 							
