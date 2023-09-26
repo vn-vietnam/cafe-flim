@@ -14,37 +14,8 @@ function Room() {
 		footer = <p>You picked {format(selected, "PP")}.</p>;
 	}
 	return (
-		<div className=" bg-red p-8 gap-5 flex flex-col">
-			<div className="border-[1px] h-[200px]   flex flex-col sm:flex-row   justify-around items-start  sm:items-center border-black rounded-lg ">
-				<div className="flex flex-col lg:flex-row gap-3 m-auto">
-					<div>Kind Room:</div>
-					<select
-						name="kindRoom"
-						id=""
-						className="border-black rounded border-[1px]"
-					>
-						<option value="">Small room (2 people)</option>
-						<option value="">medium rooms (4-6 people)</option>
-						<option value="">big rooms (8-10 people)</option>
-						<option value="">giant rooms (10-20 people)</option>
-						<option value="">theater (20+ people)</option>
-					</select>
-				</div>
-				<div className="flex flex-col lg:flex-row gap-3 m-auto">
-					<div>Price:</div>
-					<select
-						name="price"
-						id=""
-						className="border-black rounded border-[1px]"
-					>
-						<option value="">0 - 20 USD</option>
-						<option value="">20 - 50 USD</option>
-						<option value="">50-100 USD</option>
-						<option value="">100-150 USD</option>
-						<option value="">up 150 USD</option>
-					</select>
-				</div>
-			</div>
+		<div className="p-8 gap-5 flex flex-col">
+			<div className="border-[1px]  w-[100%] h-[200px] flex flex-col justify-center gap-2 items-start pl-3 lg:flex-row lg:justify-around  lg:items-center border-black rounded-lg "></div>
 			<div className="flex md:justify-between flex-col-reverse md:flex-row justify-center md:items-start items-center gap-5">
 				<div className="">
 					<div className=" flex flex-row gap-10 flex-wrap justify-center md:justify-normal">
@@ -239,6 +210,19 @@ function Room() {
 				</div>
 				<div className="w-[300px] flex flex-col justify-start ">
 					{/* <div className="flex flex-col lg:flex-row gap-3 m-auto"> */}
+					<div className=" m-auto">
+						<select
+							name="kindRoom"
+							id=""
+							className="border-black rounded border-[1px] p-3"
+						>
+							<option value="">Small room (2 people)</option>
+							<option value="">medium rooms (4-6 people)</option>
+							<option value="">big rooms (8-10 people)</option>
+							<option value="">giant rooms (10-20 people)</option>
+							<option value="">theater (20+ people)</option>
+						</select>
+					</div>
 					<DayPicker
 						mode="single"
 						selected={selected}

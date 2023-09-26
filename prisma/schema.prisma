@@ -45,6 +45,7 @@ model User {
     sessions      Session[]
     Post          Post[]
     Comment       Comment[]
+    Reserve       Reserve[]
 }
 
 model VerificationToken {
@@ -87,4 +88,39 @@ model Comment {
     user      User     @relation(fields: [userEmail], references: [email])
     postSlug  String
     post      Post     @relation(fields: [postSlug], references: [slug])
+}
+
+model Room {
+    id        String     @id @default(cuid()) @map("_id")
+    desc      String?
+    type      String
+    img       String?
+    TypeRoom  TypeRoom   @relation(fields: [type], references: [title])
+    price     Int
+    PriceRoom PriceRoom? @relation(fields: [price], references: [priceRoom])
+
+    Reserve   Reserve? @relation(fields: [reserveId], references: [id])
+    reserveId String?
+}
+
+model TypeRoom {
+    id    String @id @default(cuid()) @map("_id")
+    title String @unique
+    Rooms Room[]
+}
+
+model PriceRoom {
+    id        String @id @default(cuid()) @map("_id")
+    priceRoom Int    @unique
+    Rooms     Room[]
+}
+
+model Reserve {
+    id        String   @id @default(cuid()) @map("_id")
+    createdAt DateTime @default(now())
+    day       String
+    time      String
+    userId    String
+    user      User     @relation(fields: [userId], references: [id])
+    Room      Room[]
 }

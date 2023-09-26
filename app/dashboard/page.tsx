@@ -97,6 +97,11 @@ function Dashboard() {
 										>
 											Change
 										</button>
+										<Link href={`/update/${e?.id}`}>
+											<button className="hover:underline text-yellow-300">
+												Update
+											</button>
+										</Link>
 										<button
 											className="hover:underline text-red-500"
 											onClick={handleDelete(e?.id)}

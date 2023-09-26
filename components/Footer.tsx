@@ -3,7 +3,7 @@ import React from "react";
 
 function Footer() {
 	return (
-		<div className="w-[100%] h-[13vh] p-8 bg-white border-t-black border-[1px] flex justify-between items-center">
+		<div className="w-[100%] h-[3vh] p-8 bg-white border-t-black border-[1px] flex justify-between items-center">
 			<div className="flex justify-center items-center gap-3">
 				<Image
 					src="/Cafe.png"

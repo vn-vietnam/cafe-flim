@@ -44,8 +44,8 @@ function Header() {
 
 				<div className=" flex-row gap-3 justify-between items-center font-Noto font-[500] sm:flex hidden">
 					<Link href={"/room"}>Rooms</Link>
-					<Link href={"/"}>Movies</Link>
-					<Link href={"/"}>Foods</Link>
+					<Link href={"/movies"}>Movies</Link>
+					<Link href={"/food"}>Foods</Link>
 					<Link href={"/post"}>Blogs</Link>
 					{status === "authenticated" ? (
 						<div className="flex flex-row gap-3 justify-between items-center">
