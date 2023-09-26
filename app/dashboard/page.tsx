@@ -1,6 +1,8 @@
 "use client";
 import axios from "axios";
+import { useSession } from "next-auth/react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import React from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -17,6 +19,13 @@ const fetcher = async (url: any) => {
 	return data;
 };
 function Dashboard() {
+	const useRoute = useRouter();
+	const { data: data2, status } = useSession();
+	// if (status === "authenticated") {
+	// 	if (data2?.user?.type !== "admin") {
+	// 		useRoute.push("/");
+	// 	}
+	// }
 	const { data, isLoading } = useSWR(
 		`${process.env.NEXT_PUBLIC_URL}api/post`,
 		fetcher
@@ -75,45 +84,53 @@ function Dashboard() {
 		<div className="p-8 w-[100%] min-h-[100vh]  flex flex-col gap-5">
 			<ToastContainer />
 			<h1 className="text-3xl font-Croissant">Dashboard</h1>
-			{isLoading ? (
-				<>
-					<div>loading</div>
-				</>
+			{data2?.user?.type !== "admin" ? (
+				<>not admin</>
 			) : (
 				<>
-					<div>Total: {data.length}</div>
-					{data?.map((e: any) => {
-						return (
-							<div key={e?.id}>
-								<div className="flex sm:flex-row flex-col gap-5 justify-between items-center p-2 rounded  h-[100px]">
-									<Link href={`/post/${e?.id}`} className="hover:underline">
-										{e?.title}
-									</Link>
-									<div className="flex gap-3 items-center">
-										<div>Status: {e?.public ? " public " : " private"} </div>
-										<button
-											className="hover:underline text-green-300"
-											onClick={handleChange(e?.id, e?.public)}
-										>
-											Change
-										</button>
-										<Link href={`/update/${e?.id}`}>
-											<button className="hover:underline text-yellow-300">
-												Update
-											</button>
-										</Link>
-										<button
-											className="hover:underline text-red-500"
-											onClick={handleDelete(e?.id)}
-										>
-											Delete
-										</button>
+					{isLoading ? (
+						<>
+							<div>loading</div>
+						</>
+					) : (
+						<>
+							<div>Total: {data.length}</div>
+							{data?.map((e: any) => {
+								return (
+									<div key={e?.id}>
+										<div className="flex sm:flex-row flex-col gap-5 justify-between items-center p-2 rounded  h-[100px]">
+											<Link href={`/post/${e?.id}`} className="hover:underline">
+												{e?.title}
+											</Link>
+											<div className="flex gap-3 items-center">
+												<div>
+													Status: {e?.public ? " public " : " private"}{" "}
+												</div>
+												<button
+													className="hover:underline text-green-300"
+													onClick={handleChange(e?.id, e?.public)}
+												>
+													Change
+												</button>
+												<Link href={`/update/${e?.id}`}>
+													<button className="hover:underline text-yellow-300">
+														Update
+													</button>
+												</Link>
+												<button
+													className="hover:underline text-red-500"
+													onClick={handleDelete(e?.id)}
+												>
+													Delete
+												</button>
+											</div>
+										</div>
+										<hr />
 									</div>
-								</div>
-								<hr />
-							</div>
-						);
-					})}
+								);
+							})}
+						</>
+					)}
 				</>
 			)}
 		</div>
