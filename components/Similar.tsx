@@ -16,14 +16,12 @@ import { FreeMode, Pagination } from "swiper/modules";
 import Link from "next/link";
 import useFetch from "./useFetch";
 
-function Carousel(dataType: any) {
+function Similar(dataType: any) {
 	// console.log(dataType?.dataType?.name);
 	const slug = dataType?.dataType?.slugFirst;
 	const [change, setChange] = useState("movie");
 	const { data, loading } = useFetch(
-		dataType?.dataType?.id
-			? `/${change}/${dataType?.dataType?.id}/${dataType?.dataType?.endPoint}?api_key=${process.env.NEXT_PUBLIC_KEY_TMDB}`
-			: `/${change}/${dataType?.dataType?.endPoint}?api_key=${process.env.NEXT_PUBLIC_KEY_TMDB}`,
+		`/${change}/${dataType?.dataType?.endPoint}?api_key=${process.env.NEXT_PUBLIC_KEY_TMDB}`,
 		""
 	);
 	// console.log(data);
@@ -111,7 +109,7 @@ function Carousel(dataType: any) {
 						data.results.map((e: any) => (
 							<SwiperSlide key={e?.id}>
 								<Link
-									href={`/movies/${e?.id}`}
+									href={`movies/${e?.id}`}
 									className="rounded-xl w-[200px] h-full relative"
 								>
 									<div className=" w-full h-full absolute top-0 left-0 opacity-0 duration-100 z-40 bg-white hover:opacity-70 flex justify-center items-center flex-col p-2 gap-3 rounded-xl">
@@ -133,9 +131,7 @@ function Carousel(dataType: any) {
 										</>
 									) : (
 										<>
-											<div className="w-[100%] h-[100%] bg-red-400 rounded-xl animate-pulse">
-												<div className=" h-full w-full bg-slate-200 rounded-xl"></div>
-											</div>
+											<h1>loading</h1>
 										</>
 									)}
 									<div className="absolute top-2 right-2 bg-slate-700 text-white text-[14px] font-Croissant w-10 h-10 rounded-full flex justify-center items-center">
@@ -150,4 +146,4 @@ function Carousel(dataType: any) {
 	);
 }
 
-export default Carousel;
+export default Similar;

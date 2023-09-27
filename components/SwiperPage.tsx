@@ -46,7 +46,7 @@ function SwiperPage() {
 				}}
 				navigation={true}
 				modules={[Autoplay, Pagination, Navigation]}
-				className="mySwiper "
+				className="swiper "
 			>
 				{isLoading ? (
 					<div className="animate-pulse">

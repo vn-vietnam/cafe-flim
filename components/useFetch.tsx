@@ -12,6 +12,8 @@ type IDataMovies = {
 	];
 	page: number;
 };
+
+
 const useFetch = (url: string, params: string) => {
 	const [data, setData] = useState<IDataMovies | null>(null);
 	const [loading, setLoading] = useState<boolean | null>(null);
