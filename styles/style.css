@@ -1,9 +1,10 @@
-.mySwiper{
-
-}
 .swiper {
 	width: 100%;
 	height: 50vh;
+}
+.mySwiper{
+	height: 30vh ;
+	width: 100%;
 }
 
 .swiper-slide {
